@@ -1,0 +1,99 @@
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  padding: 1% 2%;
+  border: 1px solid gray;
+  background-color: inherit;
+}
+
+.logo {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.childItem {
+  font-size: 130%;
+  font-weight: 500;
+}
+
+.nav2 {
+  display: none;
+}
+
+
+@media all and (min-width: 801px) and (max-width: 1200px) {
+  .nav {
+    width: 80%;
+  }
+
+  .childItem {
+    font-size: 150%;
+  }
+
+  .nav2 {
+    display: none;
+  }
+}
+
+@media all and (min-width: 501px) and (max-width: 800px) {
+
+  .childItem {
+    font-size: 150%;
+    font-weight: 500;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logo {
+    width: 25%;
+  }
+
+  .nav2 {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 250%;
+  }
+}
+
+
+@media all and (min-width: 251px) and (max-width: 500px) {
+
+  .childItem {
+    font-size: 150%;
+    font-weight: 500;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logo {
+    width: 30%;
+  }
+
+  .nav2 {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 250%;
+  }
+}

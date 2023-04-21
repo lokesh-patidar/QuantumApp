@@ -1,15 +1,13 @@
 import './App.css';
-import HomePage from './Pages/HomePage';
-import Navbar from "./Pages/Navbar";
+import { Box } from '@chakra-ui/react';
+import { MainRoutes } from './AllRoutes/MainRoutes';
 
 function App() {
+
   return (
-    <div className="App">
-        <Navbar />
-      <section id="home">
-        {/* <HomePage /> */}
-      </section>
-    </div>
+    <Box className="App">
+        <MainRoutes/>
+    </Box>
   );
 }
 

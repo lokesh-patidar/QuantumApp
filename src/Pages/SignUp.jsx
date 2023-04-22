@@ -165,7 +165,7 @@ export const SignUp = () => {
                         </Stack>
 
                         <Stack spacing="6">
-                            <Button variant="primary" onClick={() =>signUpHandler()}>Sign Up</Button>
+                            <Button colorScheme='blue' onClick={() =>signUpHandler()}>Sign Up</Button>
                             <HStack>
                                 <Divider />
                                 <Text fontSize="sm" whiteSpace="nowrap" color="muted">

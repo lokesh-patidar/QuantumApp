@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase";
@@ -9,11 +9,18 @@ import { useSelector } from "react-redux";
 function PrivateRoute({ children }) {
 
   const currentUser  = useAuth();
+  
   const status = useSelector(store => store.AuthReducer.status);
+  console.log(status);
 
-  if (status !== "login success") {
+  if(status === true){
+    return children;
+  }
+
+  if(status !== "login success") {
     return <Navigate to="/" />;
   }
+
   return children;
 }
 

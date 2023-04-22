@@ -18,7 +18,7 @@ import logo from '../assets/Quantum_Logo.avif'
 import { useDispatch } from "react-redux";
 import React, { useReducer } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { login } from '../Redux/AuthReducer/action';
+import { googleSignup, login } from '../Redux/AuthReducer/action';
 
 const initialSignInState = {
     email: "",
@@ -54,6 +54,13 @@ export const SignIn = () => {
         signInReducer,
         initialSignInState
     );
+
+    const HandleGoole = () => {
+        dispatch(googleSignup());
+        setTimeout(() => {
+            navigate("/mainpage");
+        }, 1500);
+    };
 
     const signInHandler = () => {
         if (userState.email && userState.password) {
@@ -157,6 +164,8 @@ export const SignIn = () => {
                                 </Text>
                                 <Divider />
                             </HStack>
+                            <Button width={'full'} colorScheme='red' onClick={() => HandleGoole()}>Google</Button>
+
                         </Stack>
                     </Stack>
                 </Box>

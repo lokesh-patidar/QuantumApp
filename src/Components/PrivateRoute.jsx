@@ -12,8 +12,9 @@ function PrivateRoute({ children }) {
   
   const status = useSelector(store => store.AuthReducer.status);
   console.log(status);
+  console.log(currentUser);
 
-  if(status === true){
+  if(status === true || status == "login success"){
     return children;
   }
 

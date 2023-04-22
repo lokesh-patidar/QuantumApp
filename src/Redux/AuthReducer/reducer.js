@@ -20,12 +20,13 @@ const reducer = (state = initialState, action) => {
         status:true
       };
       
-    
     case types.LOGOUT_SUCCESS:
       return {
         ...state,
+        status: null,
         currentUser: null,
       };
+      
     case types.SIGNUP_SUCCESS:
       return {
         ...state,

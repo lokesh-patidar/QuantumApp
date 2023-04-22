@@ -17,19 +17,19 @@ const MainPage = () => {
     return (
         <Box bg={theme? "white" : "black"}>
             <Navbar toggleTheme={changeTheme} theme={theme} />
-            <hr/>
+            
             <section id="home">
                 <HomePage theme={theme} />
             </section>
-            <hr/>
+            
             <section id="aboutus">
                 <AboutUs theme={theme}/>
             </section>
-            <hr/>
+            
             <section id="project">
                 <Projects theme={theme}/>
             </section>
-            <hr/>
+            
             <section id="contact">
                 <Footer theme={theme}/>
             </section>

@@ -62,7 +62,7 @@ const Navbar = ({ toggleTheme, theme }) => {
           <Box className="childItem">
             <Button colorScheme="teal" onClick={logout}>Logout</Button>
           </Box>
-          <Box className="childItem" onClick={() => handleToggle()}>
+          <Box className="childItem" display="flex" alignItems="center" onClick={() => handleToggle()}>
             {theme ? <FaSun /> : <HiMoon />}
           </Box>
         </Box>

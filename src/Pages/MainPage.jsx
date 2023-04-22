@@ -20,10 +20,10 @@ const MainPage = () => {
                 <HomePage theme={theme} />
             </section>
             <section id="aboutus">
-                <AboutUs />
+                <AboutUs theme={theme}/>
             </section>
             <section id="contact">
-                <Footer />
+                <Footer theme={theme}/>
             </section>
         </Box>
     );

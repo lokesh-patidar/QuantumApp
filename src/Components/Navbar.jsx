@@ -22,7 +22,7 @@ const Navbar = ({toggleTheme, theme}) => {
 
   return (
     <>
-      <Box className="navbarContainer">
+      <Box className="navbarContainer" bg={theme ? "white" : "#1a0114"}>
         <Box className="logo">
           {isLogo? <img width="80%" src={Quantum_Logo} alt="logo" /> : <></>}
         </Box>

@@ -1,21 +1,84 @@
-import { Box, Image } from '@chakra-ui/react';
+import Quantum_Logo from "../assets/visual-content-development-topleft.png";
 import '../Styles/Home.css';
 import Typical from "react-typical";
-import Quantum_Logo from "../assets/Quantum_Logo.avif";
-import background from "../assets/background.png";
 
-const HomePage = () => {
+const HomePage = ({ theme }) => {
     return (
-        <Box id='Home' height={{base: "500px", sm:"700px", md:"1000px", lg: "1300px", xl:"1500px"}} alignContent="logo" backgroundImage={background} backgroundRepeat="no-repeat" backgroundSize="cover" backgroundPosition="center">
-            <Box height="100%" display="flex" flexDir="column" justifyContent="center" alignItems="center">
-                <Box display="flex" justifyContent="center" alignItems="center" fontSize="500%">
-                    Company Website
-                </Box>
-                <Box width="30%" fontSize={{base: "100%"}} textAlign="center" mt={10}>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry
-                </Box>
-            </Box>
-        </Box>
+        <div id="home" >
+            <div className="container">
+                <div>
+                    <div className="description">
+                        <div className="profile-details">
+                            <div className="profile-details-role">
+                                <h6 style={theme ? {
+                                    color: "black"
+                                } : {
+                                    color: "white"
+                                }}>
+                                    Well-Come to
+                                    <span className="highlighted-text" style={theme ? {
+                                        color: "#52022e"
+                                    } : {
+                                        color: "#c2046c"
+                                    }}>
+                                        &nbsp;{" Quantum World "}
+                                    </span>
+                                </h6>
+                                <span className="primary-text" style={theme ? {
+                                    color: "rgb(19, 5, 70)"
+                                } : {
+                                    color: "white"
+                                }}>
+                                    <>
+                                        <Typical
+                                            loop={Infinity}
+                                            steps={[
+                                                "Web Designing",
+                                                2000,
+                                                "App Development",
+                                                2000,
+                                                "Moders Tech-Stacks",
+                                                2000,
+                                                "Website Development",
+                                                2000,
+                                                "Mobile Applications",
+                                                2000,
+                                            ]}
+                                        />
+                                    </>
+                                </span>
+                                <span className="profile-tag-line" style={theme ? {
+                                    color: "black"
+                                } : {
+                                    color: "#f5f7ba"
+                                }}>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, It has survived not only five centuries.
+                                </span>
+                            </div>
+
+                            <div>
+                                <a href='#contactSection'><button className="btn primary-btn"> Know About Us </button></a>
+                                <a>
+                                    <button className="btn highlighted-btn">
+                                        Get In Touch
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="imagebox">
+                        <div className="profile-picture">
+                            <div className="profile-picture-background">
+                                <img
+                                    src={Quantum_Logo}
+                                    alt="logo"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
 

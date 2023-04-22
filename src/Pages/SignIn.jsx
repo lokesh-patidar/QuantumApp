@@ -18,6 +18,7 @@ import logo from '../assets/Quantum_Logo.avif'
 import { useDispatch } from "react-redux";
 import React, { useReducer, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { login } from '../Redux/AuthReducer/action';
 
 const initialSignInState = {
     email: "",
@@ -44,10 +45,10 @@ const signInReducer = (state, action) => {
 };
 
 export const SignIn = () => {
+
     const dispatch = useDispatch();
     const toast = useToast();
     const navigate = useNavigate();
-
 
     const [userState, setUserState] = useReducer(
         signInReducer,
@@ -55,9 +56,10 @@ export const SignIn = () => {
     );
 
 
-    const signUpHandler = () => {
+    const signInHandler = () => {
         if (userState.email && userState.password) {
-            // dispatch(signUp(userState));
+            console.log(userState);
+            dispatch(login(userState.email,userState.password));
             const timer = setTimeout(() => {
 
                 toast({
@@ -109,6 +111,9 @@ export const SignIn = () => {
             });
         }
     };
+
+
+
     return (
         <Container maxW="lg" py={{ base: '12', md: '24' }} px={{ base: '0', sm: '8' }}>
             <Stack spacing="8">
@@ -167,7 +172,7 @@ export const SignIn = () => {
                             </Button>
                         </HStack>
                         <Stack spacing="6">
-                            <Button variant="primary">Sign in</Button>
+                            <Button onClick={() => signInHandler()} colorScheme='blue'>Sign in</Button>
                             <HStack>
                                 <Divider />
                                 <Text fontSize="sm" whiteSpace="nowrap" color="muted">

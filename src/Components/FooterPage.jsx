@@ -26,7 +26,7 @@ import {
   import appStore from "../assets/appStore.png";
   import googlePlay from "../assets/googlePlay.webp";
   
-  const Footer = () => {
+  const Footer = ({theme}) => {
     const [show1, setShow1] = React.useState(false);
     const [show2, setShow2] = React.useState(false);
     const [show3, setShow3] = React.useState(false);
@@ -38,7 +38,7 @@ import {
     const handleToggle4 = () => setShow4(!show4);
   
     return (
-      <Box>
+      <Box color={theme ? "black" : "white"}>
         <Box width="90%" margin="auto" marginTop="3%" marginBottom="2%">
           <Flex justifyContent="space-between">
             <Box width={{ base: "20%", sm: "20%", md: "60%", lg: "60%", xl: "60%" }}>
@@ -193,19 +193,20 @@ import {
                     _hover={{ color: "blue" }}
                     icon={faFacebook}
                     size="1x"
+                    color={theme ? "black" : "gray"}
                   />
                 </Box>
                 <Box margin="4%" w="100%" cursor="pointer">
-                  <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
+                  <FontAwesomeIcon icon={faLinkedinIn} size="1x"  color={theme ? "black" : "gray"}/>
                 </Box>
                 <Box margin="4%" w="100%" cursor="pointer">
-                  <FontAwesomeIcon icon={faTwitter} size="1x" />
+                  <FontAwesomeIcon icon={faTwitter} size="1x"  color={theme ? "black" : "gray"}/>
                 </Box>
                 <Box margin="4%" w="100%" cursor="pointer">
-                  <FontAwesomeIcon icon={faInstagram} size="1x" />
+                  <FontAwesomeIcon icon={faInstagram} size="1x"  color={theme ? "black" : "gray"}/>
                 </Box>
                 <Box margin="4%" w="100%" cursor="pointer">
-                  <FontAwesomeIcon icon={faYoutube} size="1x" />
+                  <FontAwesomeIcon icon={faYoutube} size="1x"  color={theme ? "black" : "gray"}/>
                 </Box>
               </Flex>
             </Box>
@@ -234,7 +235,7 @@ import {
             <Box textAlign="left">
               <Collapse startingHeight={212} in={show1}>
                 <Text
-                  color="#3e3f42"
+                  color={theme ? "#3e3f42" : "gray.400"}
                   cursor="pointer"
                   margin={{
                     base: "10%",
@@ -394,7 +395,7 @@ import {
             <Box textAlign="left">
               <Collapse startingHeight={212} in={show2}>
                 <Text
-                  color="#3e3f42"
+                  color={theme ? "#3e3f42" : "gray.400"}
                   cursor="pointer"
                   margin={{
                     base: "10%",
@@ -554,7 +555,7 @@ import {
             <Box textAlign="left">
               <Collapse startingHeight={212} in={show3}>
                 <Text
-                  color="#3e3f42"
+                  color={theme ? "#3e3f42" : "gray.400"}
                   cursor="pointer"
                   margin={{
                     base: "10%",
@@ -678,7 +679,7 @@ import {
             <Box textAlign="left">
               <Collapse startingHeight={212} in={show4}>
                 <Text
-                  color="#3e3f42"
+                  color={theme ? "#3e3f42" : "gray.400"}
                   cursor="pointer"
                   margin={{
                     base: "10%",
@@ -813,7 +814,7 @@ import {
           <GridItem w="100%" paddingLeft="5%">
             <Box textAlign="left">
               <Text
-                color="#3e3f42"
+                color={theme ? "#3e3f42" : "gray.400"}
                 cursor="pointer"
                 margin={{ base: "10%", sm: "4%", md: "4%", lg: "10%", xl: "10%" }}
                 fontWeight="700"
@@ -870,7 +871,7 @@ import {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text
-                    color="#383a3d"
+                    color={theme ? "#3e3f42" : "gray.400"}
                     margin="2%"
                     fontWeight="bold"
                     cursor="pointer"
@@ -921,7 +922,7 @@ import {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text
-                    color="#383a3d"
+                    color={theme ? "#3e3f42" : "gray.400"}
                     margin="2%"
                     fontWeight="bold"
                     cursor="pointer"
@@ -972,7 +973,7 @@ import {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text
-                    color="#383a3d"
+                    color={theme ? "#3e3f42" : "gray.400"}
                     margin="2%"
                     cursor="pointer"
                     fontWeight="bold"
@@ -1014,7 +1015,7 @@ import {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text
-                    color="#383a3d"
+                    color={theme ? "#3e3f42" : "gray.400"}
                     margin="2%"
                     cursor="pointer"
                     fontWeight="bold"
@@ -1059,7 +1060,7 @@ import {
               <AccordionButton>
                 <Box as="span" flex="1" textAlign="left">
                   <Text
-                    color="#383a3d"
+                    color={theme ? "#3e3f42" : "gray.400"}
                     margin="2%"
                     cursor="pointer"
                     fontWeight="bold"
@@ -1109,7 +1110,7 @@ import {
           </Box>
         </Box>
   
-        <Box width="100%" backgroundColor="#e6eef7" padding="1%">
+        <Box width="100%" backgroundColor={theme? "#e6eef7" : "#1a0114"} padding="1%">
           <Box
             display="flex"
             width="90%"

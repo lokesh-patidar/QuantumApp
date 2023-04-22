@@ -8,7 +8,6 @@
   position: sticky;
   top: 0;
   padding: 1% 2%;
-  border: 1px solid gray;
   background-color: inherit;
 }
 
@@ -71,6 +70,10 @@
     align-items: center;
     font-size: 250%;
   }
+  
+  .navbarContainer {
+    padding: 2% 3%;
+  }
 }
 
 
@@ -95,5 +98,8 @@
     justify-content: center;
     align-items: center;
     font-size: 250%;
+  }
+  .navbarContainer {
+    padding: 2% 4%;
   }
 }

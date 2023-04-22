@@ -1,10 +1,10 @@
-import { FaGithub, FaLink } from "react-icons/fa";
 import "../Styles/Project.css";
 import projectimg from "../assets/projectimg.webp";
+import { Box } from "@chakra-ui/react";
 
-const ProjectItem = () => {
+const ProjectItem = ({theme}) => {
     return (
-            <div className="projectItem">
+            <Box className="projectItem">
                 <div className="projectImage">
                     <img src={projectimg} alt="projectimg" /> 
                 </div>
@@ -21,7 +21,7 @@ const ProjectItem = () => {
                         It is an Individual project built by me.
                     </div>
                 </div>
-            </div>
+            </Box>
     );
 };
 

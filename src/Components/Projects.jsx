@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Styles/Project.css";
 import { ProjectItem } from "./ProjectItem";
 
-export const Projects = () => {
+export const Projects = ({theme}) => {
 
   const [data, setData] = useState([1,2]);
 
@@ -16,7 +16,7 @@ export const Projects = () => {
 
           <div className="projectBox">
             {data.map((e,i) => {
-              return <ProjectItem key={i}/>
+              return <ProjectItem key={i} theme={theme}/>
             })}
           </div>
         </div>

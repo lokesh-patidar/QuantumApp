@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles//Navbar.css";
 import { Link } from "react-scroll";
 import Quantum_Logo from "../assets/Quantum_Logo.avif";
-import { Box } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import { MenuDrawer } from "../Drawers/MenuDrawer";
 import { HiMoon } from "react-icons/hi";
 import { FaSun } from "react-icons/fa";
-import SignUpLogin from "../Modals/SignUpLogin";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/firebase";
+import useAuth from "../useAuth";
+import { userlogout } from "../Redux/AuthReducer/action";
+import { useDispatch } from "react-redux";
+
 
 const Navbar = ({ toggleTheme, theme }) => {
 
   const [isLogo, setIsLogo] = useState(true);
+  const dispatch = useDispatch();
+  const currentUser = useAuth();
 
   const handleToggleLogo = () => {
     setIsLogo(prev => !prev);
@@ -19,6 +26,14 @@ const Navbar = ({ toggleTheme, theme }) => {
   const handleToggle = () => {
     toggleTheme();
   }
+
+  const logout=() =>{
+    if(currentUser){
+        dispatch(userlogout());
+    }
+}
+
+  console.log(currentUser?.email);
 
   return (
     <>
@@ -47,6 +62,8 @@ const Navbar = ({ toggleTheme, theme }) => {
           <Box className="childItem" onClick={() => handleToggle()}>
             {theme ? <FaSun /> : <HiMoon />}
           </Box>
+          <Box fontWeight="bold">{currentUser?.email.substring(0,currentUser.email.indexOf("@"))}</Box>
+          <Button onClick={logout}>Logout</Button>
         </Box>
         <Box className="nav2" >
           <Box className="childItem" onClick={() => handleToggle()} marginRight={5}>

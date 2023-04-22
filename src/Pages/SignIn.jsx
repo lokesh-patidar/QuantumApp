@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react'
 import logo from '../assets/Quantum_Logo.avif'
 import { useDispatch } from "react-redux";
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { login } from '../Redux/AuthReducer/action';
 
@@ -60,31 +60,9 @@ export const SignIn = () => {
         if (userState.email && userState.password) {
             console.log(userState);
             dispatch(login(userState.email,userState.password));
-            const timer = setTimeout(() => {
-
-                toast({
-                    title: "User signed up!",
-                    status: "success",
-                    duration: 2000,
-                    position: "top",
-                    isClosable: true,
-                    render: () => (
-                        <Box
-                            border="2px solid green"
-                            textAlign="center"
-                            borderRadius="10px"
-                            fontWeight="bolder"
-                            color="white"
-                            p={3}
-                            bg="blue.500"
-                            boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
-                        >
-                            {`Sign up suceessfull!`}
-                        </Box>
-                    ),
-                });
-            }, 3000);
-            return () => clearTimeout(timer);
+            setTimeout(() => {
+                navigate("/mainpage");
+            }, 2000);
         }
         else {
             toast({

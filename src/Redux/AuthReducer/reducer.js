@@ -5,7 +5,7 @@ const initialState = {
   newUser:null,
   currentUser: null,
   error: null,
-  status: true,
+  status: null,
 };
 
 const reducer = (state = initialState, action) => {

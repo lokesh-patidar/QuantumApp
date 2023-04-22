@@ -58,7 +58,7 @@ const HomePage = ({ theme }) => {
 
                             <div>
                                 <a href='#contactSection'><button className="btn primary-btn"> Know About Us </button></a>
-                                <a>
+                                <a href="#">
                                     <button className="btn highlighted-btn">
                                         Get In Touch
                                     </button>

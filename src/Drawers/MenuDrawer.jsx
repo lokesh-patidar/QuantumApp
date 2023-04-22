@@ -20,12 +20,12 @@ const MenuDrawer = ({ onclickevent, theme }) => {
         onClose();
     }
 
-    useEffect(() => {
-        if (window.innerWidth > 800) {
-            onClose();
-            console.log(window.innerWidth);
-        }
-    },[window.innerWidth]);
+    // useEffect(() => {
+    //     if (window.innerWidth > 800) {
+    //         onClose();
+    //         console.log(window.innerWidth);
+    //     }
+    // },[window.innerWidth, onClose]);
 
     return (
         <Box>

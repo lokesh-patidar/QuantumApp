@@ -62,15 +62,12 @@ export const setUser = (Cuser) => ({
 });
 
 
-export const signup = (displayName, email, password) => {
+export const signup = (email, password) => {
     return function (dispatch) {
         dispatch(signupLoading());
         auth
             .createUserWithEmailAndPassword(email, password)
             .then(({ user }) => {
-                user.updateProfile({
-                    displayName,
-                });
                 dispatch(signupSuccess(user));
             })
             .catch((err) => dispatch(signupError(err.message)));

@@ -16,9 +16,10 @@ import {
     useToast
 } from '@chakra-ui/react';
 import logo from '../assets/Quantum_Logo.avif'
-import { useDispatch } from "react-redux";
-import React, { useReducer, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useReducer, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { googleSignup, signup } from '../Redux/AuthReducer/action';
 
 
 const initialSignUpState = {
@@ -51,6 +52,7 @@ export const SignUp = () => {
     const dispatch = useDispatch();
     const toast = useToast();
     const navigate = useNavigate();
+    const {status, error} = useSelector((store) => store.AuthReducer); 
 
 
     const [userState, setUserState] = useReducer(
@@ -58,35 +60,30 @@ export const SignUp = () => {
         initialSignUpState
     );
 
+    useEffect(() => {
+         if(status == "signup success"){
+            alert("Signup successfull!")
+         }
+
+         if(error){
+            alert(error);
+         }
+    },[status, error]);
+
+    const HandleGoole = () => {
+        dispatch(googleSignup());
+    }
+
     const signUpHandler = () => {
 
         if( userState.email && userState.password ) {
-            // dispatch(signUp(userState));
-            const timer = setTimeout(() => {
-                
-                toast({
-                    title: "User signed up!",
-                    status: "success",
-                    duration: 2000,
-                    position: "top",
-                    isClosable: true,
-                    render: () => (
-                        <Box
-                            border="2px solid green"
-                            textAlign="center"
-                            borderRadius="10px"
-                            fontWeight="bolder"
-                            color="white"
-                            p={3}
-                            bg="blue.500"
-                            boxShadow="rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px"
-                        >
-                            {`Sign up suceessfull!`}
-                        </Box>
-                    ),
-                });
-            }, 3000);
-            return () => clearTimeout(timer);
+            console.log(userState);
+            dispatch(signup(userState.email, userState.password));
+            
+            setTimeout(() => {
+                navigate("/");
+            }, 2000);
+
         } else {
             toast({
                 title: "Error!",
@@ -166,14 +163,16 @@ export const SignUp = () => {
                         </Stack>
 
                         <Stack spacing="6">
-                            <Button variant="primary">Sign Up</Button>
+                            <Button variant="primary" onClick={() =>signUpHandler()}>Sign Up</Button>
                             <HStack>
                                 <Divider />
                                 <Text fontSize="sm" whiteSpace="nowrap" color="muted">
-                                    or continue with
+                                    or continue with 
                                 </Text>
                                 <Divider />
                             </HStack>
+                            <Button width={'full'} colorScheme='red' onClick={() => HandleGoole()}>Google</Button>
+
                         </Stack>
                     </Stack>
                 </Box>

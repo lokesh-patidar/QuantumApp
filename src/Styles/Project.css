@@ -17,8 +17,6 @@
     font-size: 45px;
     width: 200px;
     margin: auto;
-    border-bottom: 2px solid rgb(19, 5, 70);
-    color: rgb(19, 5, 70);
     margin-bottom: 5px;
 }
 
@@ -53,7 +51,6 @@
 .projectDetails>h2 {
     display: flex;
     font-weight: bold;
-    color: rgb(6, 84, 84);
 }
 
 .projectImage {

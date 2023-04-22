@@ -2,7 +2,6 @@
 import {
     Box,
     Button,
-    Checkbox,
     Container,
     Divider,
     FormControl,
@@ -17,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import logo from '../assets/Quantum_Logo.avif'
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { googleSignup, signup } from '../Redux/AuthReducer/action';
 
@@ -72,6 +71,9 @@ export const SignUp = () => {
 
     const HandleGoole = () => {
         dispatch(googleSignup());
+        setTimeout(() => {
+            navigate("/mainpage");
+        }, 2000);
     }
 
     const signUpHandler = () => {

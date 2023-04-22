@@ -4,13 +4,13 @@ import { Box } from "@chakra-ui/react";
 
 const ProjectItem = ({theme}) => {
     return (
-            <Box className="projectItem">
+            <Box className="projectItem" bg={theme ? "white" : "#403f3f"}>
                 <div className="projectImage">
                     <img src={projectimg} alt="projectimg" /> 
                 </div>
                 <div className="projectDetails">
-                    <h2>Quantum Team Project</h2>
-                    <div className="desc">
+                    <h2 style={theme ? {color: "teal"} : {color: "yellow"}}>Quantum Team Project</h2>
+                    <div className={theme ? "darkColor desc" : "lightColor desc"}>
                         <span>Description</span>
                         <br />
                         GroceryMarket is an online food and grocery store. You will

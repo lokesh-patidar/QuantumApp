@@ -11,7 +11,7 @@ export const Projects = ({theme}) => {
       <div className="projectsContainer">
         <div>
           <div className="projectheading">
-            <h1>Projects</h1>
+            <h1 className={theme ? "darkColor" : "lightColor"}>Projects</h1>
           </div>
 
           <div className="projectBox">

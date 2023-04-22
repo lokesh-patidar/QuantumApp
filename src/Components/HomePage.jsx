@@ -4,7 +4,7 @@ import Typical from "react-typical";
 
 const HomePage = ({ theme }) => {
     return (
-        <div id="home" >
+        <div>
             <div className="container">
                 <div>
                     <div className="description">
@@ -57,7 +57,7 @@ const HomePage = ({ theme }) => {
                             </div>
 
                             <div>
-                                <a href='#contactSection'><button className="btn primary-btn"> Know About Us </button></a>
+                                <a href='#'><button className="btn primary-btn"> Know About Us </button></a>
                                 <a href="#">
                                     <button className="btn highlighted-btn">
                                         Get In Touch

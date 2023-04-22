@@ -4,7 +4,7 @@ import appimg from "../assets/banner3.png";
 
 const AboutUs = ({ theme }) => {
     return (
-        <Box id="aboutus" mt={5}>
+        <Box pt={5}>
             <Text fontWeight="bold" display="flex" justifyContent="center" alignItems="center" fontSize="200%" color={theme ? "black" : "white"}>About Us</Text>
             <Text width={{ base: "80%" }} fontSize={{ base: "130%" }} fontWeight="500" color={theme ? "blue.700" : "orange.500"} margin="auto" display="flex" justifyContent="center" alignItems="center" textAlign="center" mt={2} mb={2}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
             <Text width={{ base: "80%" }} margin="auto" display="flex" justifyContent="center" alignItems="center" fontSize="100%" textAlign="center" color={theme ? "black" : "white"} mb={10}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</Text>

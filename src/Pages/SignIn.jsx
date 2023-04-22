@@ -55,7 +55,6 @@ export const SignIn = () => {
         initialSignInState
     );
 
-
     const signInHandler = () => {
         if (userState.email && userState.password) {
             console.log(userState);

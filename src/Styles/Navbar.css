@@ -27,12 +27,23 @@
 .childItem {
   font-size: 130%;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .nav2 {
   display: none;
 }
 
+.darkColor {
+  color: black;
+}
+
+.lightColor {
+  color: white;
+}
+.red{
+  color: red;
+}
 
 @media all and (min-width: 801px) and (max-width: 1200px) {
   .nav {
@@ -64,13 +75,13 @@
   }
 
   .nav2 {
-    width: 10%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 250%;
   }
-  
+
   .navbarContainer {
     padding: 2% 3%;
   }
@@ -99,6 +110,7 @@
     align-items: center;
     font-size: 250%;
   }
+
   .navbarContainer {
     padding: 2% 4%;
   }

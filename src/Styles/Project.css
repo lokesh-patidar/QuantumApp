@@ -1,0 +1,317 @@
+.projectsContainer {
+    width: 100%;
+    height: auto;
+    padding-top: 3%;
+    padding-bottom: 2%;
+}
+
+.projectsContainer .projectheading {
+    width: 100%;
+    text-align: center;
+}
+
+.projectsContainer .projectheading h1 {
+    text-align: center;
+    font-family: 'Courgette', cursive;
+    font-weight: bolder;
+    font-size: 45px;
+    width: 200px;
+    margin: auto;
+    border-bottom: 2px solid rgb(19, 5, 70);
+    color: rgb(19, 5, 70);
+    margin-bottom: 5px;
+}
+
+
+.projectBox {
+    padding: 3%;
+}
+
+.projectItem {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    border-radius: 17px;
+    padding-bottom: 4%;
+    margin-top: 5%;
+}
+
+.projectItem1 {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    flex-direction: row-reverse;
+    padding: 2%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    width: 90%;
+    background-color: white;
+    border-radius: 17px;
+    padding-bottom: 4%;
+}
+
+.projectItem:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    transform: scale(1.03);
+    transition: 0.5s ease-in-out;
+}
+
+.projectDetails {
+    width: 45%;
+    display: block;
+    text-align: center;
+}
+
+.projectDetails>h2 {
+    display: flex;
+    font-weight: bold;
+    color: rgb(6, 84, 84);
+}
+
+.projectImage {
+    width: 45%;
+    display: block;
+}
+
+.projectImage>img {
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 20px;
+}
+
+.desc {
+    text-align: left;
+    font-size: 90%;
+}
+
+.desc>span {
+    font-size: large;
+    font-weight: bold;
+}
+
+.project-type {
+    font-size: 160%;
+    color: rgb(153, 6, 69);
+    font-weight: bold;
+}
+
+.project-type>span {
+    color: blue;
+}
+
+
+@media all and (min-width: 651px) and (max-width: 900px) {
+
+    #Projects {
+        padding-top: 5%;
+    }
+
+    .projectDetails {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding-right: 3%;
+    }
+
+    .projectsContainer .projectheading {
+        width: 100%;
+    }
+
+    .projectsContainer .projectheading h1 {
+        font-size: 30px;
+        width: fit-content;
+        margin-bottom: 5%;
+    }
+
+    .projectItem {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: auto;
+        padding: 5%;
+        margin-top: 5%;
+    }
+
+    .projectDetails h2 {
+        font-size: 200%;
+    }
+
+    .projectImage {
+        width: 95%;
+        margin-top: 5%;
+        margin: auto;
+    }
+
+    .projectImage>img {
+        width: 100%;
+        border-radius: 3px;
+        margin: auto;
+    }
+
+    .desc>span {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .desc {
+        font-size: 110%;
+    }
+
+    .desc>span {
+        font-size: 150%;
+    }
+
+    .project-type {
+        font-size: 230%;
+        color: rgb(153, 6, 69);
+        font-weight: bold;
+    }
+}
+
+@media all and (min-width: 400px) and (max-width: 650px) {
+
+    #Projects {
+        padding-top: 1%;
+    }
+
+    .projectDetails {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding-right: 3%;
+    }
+
+    .projectsContainer .projectheading {
+        width: 100%;
+    }
+
+    .projectsContainer .projectheading h1 {
+        font-size: 30px;
+        width: fit-content;
+        margin-bottom: 5%;
+    }
+
+    .projectItem {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: auto;
+        padding: 5%;
+        margin-top: 5%;
+    }
+
+    .projectDetails h2 {
+        font-size: 150%;
+    }
+
+    .projectImage {
+        width: 95%;
+        margin-top: 5%;
+        height: auto;
+        margin: auto;
+    }
+
+    .projectImage>img {
+        height: 200px;
+        width: 100%;
+        border-radius: 3px;
+        margin: auto;
+    }
+
+    .desc>span {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+
+    .desc {
+        font-size: 70%;
+    }
+}
+
+@media all and (min-width: 250px) and (max-width: 400px) {
+
+    .project-type {
+        font-size: 100%;
+        font-weight: bold;
+    }
+
+    #Projects {
+        padding-top: 5%;
+    }
+
+    .projectDetails {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding-right: 3%;
+    }
+
+    .projectsContainer .projectheading {
+        width: 100%;
+    }
+
+    .projectsContainer .projectheading h1 {
+        font-size: 30px;
+        width: fit-content;
+        margin-bottom: 5%;
+    }
+
+    .projectItem1 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .projectItem1 {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        width: 85%;
+        background-color: white;
+        border-radius: 17px;
+    }
+
+    .projectDetails h2 {
+        font-size: large;
+        color: rgb(34, 4, 201);
+    }
+
+    .projectItem {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        width: 85%;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .projectImage {
+        width: 90%;
+        margin-top: 5%;
+        height: 225px;
+        margin: auto;
+        margin-bottom: -20px;
+    }
+
+    .projectImage>img {
+        height: 150px;
+        width: 100%;
+        border-radius: 3px;
+        margin: auto;
+    }
+
+    .desc>span {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .desc {
+        font-size: 70%;
+    }
+}

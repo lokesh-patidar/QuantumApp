@@ -5,7 +5,7 @@ import { Link } from "react-scroll";
 import { RxCross2 } from "react-icons/rx";
 import Quantum_Logo from "../assets/Quantum_Logo.avif";
 
-const MenuDrawer = ({ onclickevent }) => {
+const MenuDrawer = ({ onclickevent, theme }) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
@@ -32,9 +32,9 @@ const MenuDrawer = ({ onclickevent }) => {
             <Box>
                 {
                     !isOpen ? (
-                        <Box ref={btnRef} onClick={() => openDrawer()}><TfiMenu /></Box>
+                        <Box ref={btnRef} onClick={() => openDrawer()}><TfiMenu className={theme ? "darkColor" : "lightColor"}/></Box>
                     ) : (
-                        <Box onClick={() => closeDrawer()}><RxCross2 fontSize="150%" /></Box>
+                        <Box onClick={() => closeDrawer()}><RxCross2 className={theme ? "darkColor" : "lightColor"} fontSize="150%" /></Box>
                     )
                 }
             </Box>
@@ -42,15 +42,17 @@ const MenuDrawer = ({ onclickevent }) => {
                 isOpen={isOpen}
                 placement='right'
                 onClose={onClose}
+                size={"xl"}
                 finalFocusRef={btnRef}
             >
                 <DrawerOverlay />
-                <DrawerContent>
-                    <DrawerHeader pt="4%" pl="4%">
+                <DrawerContent bg={theme ? "white" : "black"}>
+                    <DrawerHeader pt="4%" pl="4%" display="flex" justifyContent={"space-between"}>
                         <Image width="20%" src={Quantum_Logo} alt="logo" />
+                        <Box onClick={() => closeDrawer()}><RxCross2 className={theme ? "darkColor" : "lightColor"} fontSize="200%" /></Box>
                     </DrawerHeader>
-                    <DrawerBody>
-                        <Box width="100%" bg="white" display="flex" pl="4%" pt="3%">
+                    <DrawerBody bg={theme ? "white" : "black"}>
+                        <Box  width="100%" bg={theme ? "white" : "black"} color={theme? "black" : "white"} display="flex" pl="4%" pt="3%">
                             <Box display="flex" flexDirection="column">
                                 <Box pt="2%" className="childItem">
                                     <Link onClick={() => closeDrawer()} smooth spy to="home">Home </Link>
